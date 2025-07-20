@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to the Quiz{% endblock %}
+
+{% block content %}
+    <div class="home">
+        <h1>Welcome to the Ultimate Quiz Game!</h1>
+        <p>Test your knowledge and challenge yourself!</p>
+        <a class="start-btn" href="{{ url_for('quiz') }}">Start Quiz</a>
+    </div>
+{% endblock %}

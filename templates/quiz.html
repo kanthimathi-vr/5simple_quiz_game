@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Take the Quiz{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('quiz') }}" method="POST">
+    {% for q in questions %}
+        <div class="question-block">
+            <h3>{{ loop.index }}. {{ q.question }}</h3>
+            {% if q.image %}
+                <img src="{{ url_for('static', filename=q.image) }}" alt="Question Image">
+            {% endif %}
+            {% for choice in q.choices %}
+                <label>
+                    <input type="radio" name="{{ q.id }}" value="{{ choice }}" required>
+                    {{ choice }}
+                </label><br>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <button type="submit">Submit Answers</button>
+</form>
+{% endblock %}
