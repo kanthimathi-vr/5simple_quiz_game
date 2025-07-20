@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}Your Result{% endblock %}
+
+{% block content %}
+    <p>You scored <strong>{{ score }}</strong> out of <strong>{{ total }}</strong>.</p>
+    <a href="{{ url_for('quiz') }}">Try Again</a>
+{% endblock %}
